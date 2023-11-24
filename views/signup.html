@@ -6,7 +6,7 @@
     <title>SignUp</title>
 </head>
 <body>
-    <form onsubmit="addUser(event)">
+    <form onsubmit="signup(event)">
         <label for ="name">Enter Name:</label><br>
         <input type="text" name="name" id="name" autocomplete="off" required/><br>
         <label for ="email">Enter Email:</label><br>
@@ -17,5 +17,11 @@
         <input type="password" name="password" id="password" autocomplete="off" required/><br>
         <input class= "submit" type="submit" id="btn" value="submit" ><br>
     </form>
+
+    <a class="link" href='./login.html'>Existing User- Login</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+
+    <script src="./signup.js"></script>
 </body>
 </html>

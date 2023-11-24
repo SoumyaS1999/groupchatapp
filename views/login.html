@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
-    
+    <form id="form" onsubmit="login(event)">
+        <label for ="email">Enter Email:</label><br>
+        <input name="email" type="text" id="email" autocomplete="email"><br>
+        <label for ="password">Enter Password:</label><br>
+        <input name="password" type="password" id="password" autocomplete="off"><br>
+        <input class= "submit" type="submit" id="btn" value="submit" ><br>
+    </form>
+
+    <button class="password" onclick="forgotpassword()"> Forgot password</button><br>
+    <a href='./signup.html' class="link">New User- Sign Up</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+
+    <script src="./login.js">
+
+      
+    </script>
 </body>
 </html>

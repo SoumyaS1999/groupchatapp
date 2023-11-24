@@ -25,12 +25,14 @@ app.use(cors());
 app.set('views', 'views');
 
 const userRoutes=require('./routes/user');
+const chatRoutes=require('./chat/user');
 
 
 app.use(bodyParser.json({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/user',userRoutes);
+app.use('/chat',chatRoutes);
 
 
 app.use((req,res)=>{

@@ -14,7 +14,7 @@ function login(event){
         console.log(response)
         if(response.status===200){
             alert(response.data.message)
-           // localStorage.setItem('token', response.data.token)
+            localStorage.setItem('token', response.data.token)
             window.location.href="./expense.html"
         }else{
             throw new Error(response.data.message)

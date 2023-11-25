@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const sequelize = require('./util/database');
 
 const User=require('./models/users.js');
+const Chat=require('./models/chat.js');
 
 
 var cors=require('cors');
@@ -25,7 +26,7 @@ app.use(cors());
 app.set('views', 'views');
 
 const userRoutes=require('./routes/user');
-const chatRoutes=require('./chat/user');
+const chatRoutes=require('./routes/chat');
 
 
 app.use(bodyParser.json({ extended: false }));
@@ -40,7 +41,8 @@ app.use((req,res)=>{
   res.sendFile(path.join(__dirname,`views/${req.url}`));
 })
 
-
+User.hasMany(Chat);
+Chat.belongsTo(User);
 
 
 sequelize.sync()

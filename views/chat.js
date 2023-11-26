@@ -66,3 +66,7 @@ function addchat(event){
                             </li>`
         parentElem.innerHTML= parentElem.innerHTML+childElem ;
         }
+
+        setTimeout(function(){
+            location.reload();
+        },3000);

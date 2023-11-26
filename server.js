@@ -9,6 +9,9 @@ const sequelize = require('./util/database');
 
 const User=require('./models/users.js');
 const Chat=require('./models/chat.js');
+const Group=require('./models/group.js');
+const GroupChat=require('./models/groupchat.js');
+const GroupMember=require('./models/groupmember.js');
 
 
 var cors=require('cors');
@@ -43,6 +46,15 @@ app.use((req,res)=>{
 
 User.hasMany(Chat);
 Chat.belongsTo(User);
+
+User.belongsToMany(Group, { through: GroupMember });
+Group.belongsToMany(User, { through: GroupMember });
+
+Group.hasMany(GroupChat);
+GroupChat.belongsTo(Group);
+
+User.hasMany(GroupChat);
+GroupChat.belongsTo(User);
 
 
 sequelize.sync()

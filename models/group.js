@@ -12,8 +12,6 @@ const Group=sequelize.define('groups',{
         type: Sequelize.STRING,
         allowNull:false
     },
-    admin:{
-        type: Sequelize.INTEGER,
-    }
+   
 });
     module.exports=Group;

@@ -8,5 +8,8 @@ const GroupMembers=sequelize.define('groupmembers',{
         allowNull:false,
         primaryKey:true
     },
+    isAdmin:{
+        type: Sequelize.BOOLEAN,
+    }
 });
     module.exports=GroupMembers;
